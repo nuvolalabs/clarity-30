@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import Recorder from './Recorder.jsx'
+import SwapList from './SwapList.jsx'
 import { DAILY_BLOCKS, WARMUPS, dayInfo, isBaseline, isCheckpoint } from '../lib/curriculum.js'
+import { swapsForDay } from '../lib/phrasing.js'
 import { analyse } from '../lib/analysis.js'
 import { keyFor, putRecording } from '../lib/db.js'
 import { isRecordingSupported } from '../lib/recorder.js'
@@ -56,6 +58,7 @@ export default function DaySession({ day, onComplete, onExit }) {
   const [selfRating, setSelfRating] = useState(null)
   const [saving, setSaving] = useState(false)
   const block = DAILY_BLOCKS[step]
+  const todaySwaps = swapsForDay(day, info.stage)
 
   async function handleCapture(slot, capture) {
     setSaving(true)
@@ -127,11 +130,14 @@ export default function DaySession({ day, onComplete, onExit }) {
         )}
 
         {step === 1 && (
-          <div className="drill-now">
-            <div className="drill-name">{info.drill.name}</div>
-            <p className="muted">{info.drill.how}</p>
-            <div className="target-chip">Today’s target: {info.focus}</div>
-          </div>
+          <>
+            <div className="drill-now">
+              <div className="drill-name">{info.drill.name}</div>
+              <p className="muted">{info.drill.how}</p>
+              <div className="target-chip">Sound target: {info.focus}</div>
+            </div>
+            <SwapList swaps={todaySwaps} title="Today’s authority swaps" />
+          </>
         )}
 
         {step === 2 && (
@@ -140,6 +146,11 @@ export default function DaySession({ day, onComplete, onExit }) {
               <div className="muted small">Say this out loud</div>
               <p className="say">{info.say}</p>
               {info.prompt && <p className="muted small">Then: {info.prompt}</p>}
+              {todaySwaps[0] && (
+                <p className="muted small">
+                  Work today’s swap in: instead of “{todaySwaps[0].weak}” say “{todaySwaps[0].strong}”
+                </p>
+              )}
             </div>
             <Recorder label="Record" onCapture={(c) => handleCapture('record', c)} disabled={saving} />
             {record?.metrics && (

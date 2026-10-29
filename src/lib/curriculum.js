@@ -19,7 +19,7 @@ export const DAILY_BLOCKS = [
     id: 'drill',
     title: 'Target drill',
     minutes: 3,
-    cue: 'One clarity target today. Precision first, speed second.'
+    cue: 'One sound target and today’s authority swaps. Precision first, speed second.'
   },
   {
     id: 'record',

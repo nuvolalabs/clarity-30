@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard.jsx'
 import DaySession from './components/DaySession.jsx'
 import CompareView from './components/CompareView.jsx'
 import ProgressView from './components/ProgressView.jsx'
+import PhrasesView from './components/PhrasesView.jsx'
 import { store } from './lib/store.js'
 import { personalize } from './lib/onboarding.js'
 import { clearRecordings } from './lib/db.js'
@@ -67,7 +68,7 @@ export default function App() {
           <span className="brand-dot" />
           <div>
             <div className="brand-name">Clarity30</div>
-            <div className="brand-tag">articulation &amp; speech clarity</div>
+            <div className="brand-tag">clear speech · authoritative phrasing</div>
           </div>
         </div>
       </header>
@@ -85,6 +86,7 @@ export default function App() {
           />
         )}
         {view === 'compare' && <CompareView state={state} onExit={() => setView('dashboard')} />}
+        {view === 'phrases' && <PhrasesView />}
         {view === 'progress' && (
           <ProgressView state={state} onReset={resetAll} onOpenDay={openDay} />
         )}
@@ -95,6 +97,7 @@ export default function App() {
           {[
             { id: 'dashboard', label: 'Today' },
             { id: 'progress', label: 'Progress' },
+            { id: 'phrases', label: 'Phrases' },
             { id: 'compare', label: 'Compare' }
           ].map((t) => (
             <button

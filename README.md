@@ -18,7 +18,7 @@ from those answers (deterministically — same answers, same plan).
 | Block | Time | What you do |
 |---|---|---|
 | Reset & warm-up | 2 min | Jaw/lip stretches and diaphragm breathing |
-| Target drill | 3 min | One clarity target for the day (word endings, pacing, tongue twisters…) |
+| Target drill | 3 min | One sound target **plus today's authority swaps** (word endings, pacing, tongue twisters…) |
 | Record | 3 min | Read/answer aloud; the browser records it |
 | Listen & repeat | 2 min | Play it back, note **one** correction, re-record |
 
@@ -35,6 +35,23 @@ from those answers (deterministically — same answers, same plan).
 
 **Baselines use the same passage** on Days 1, 15 and 30, so the comparison view is a fair
 before/after — play them in order and hear the change.
+
+## Say it with authority
+
+The linguistic half of articulation: **swap apologetic, hedging phrasing for phrasing that
+carries authority** — the same message, delivered by someone in control.
+
+- “Sorry I’m late.” → **“Thanks for waiting.”**
+- “I just wanted to check in…” → **“I’m checking in on the delivery date.”**
+- “Yeah, but…” → **“I see it differently — here’s why.”**
+- “Does that make sense?” → **“What questions do you have?”**
+
+70+ swaps across 12 families — apology→appreciation, hedging→certainty, permission→statement,
+filler→pause, blame→ownership, hedged disagreement→clear, yielding→holding,
+defensiveness→curiosity, soft no→clear no, panic→buying time, passive→directing,
+modesty→evidence. Each carries a one-line reason, so you learn *why* it lands. Every day's
+Target drill serves three swaps matched to your stage, and the whole library is browsable
+under **Phrases**.
 
 ## Privacy & data
 

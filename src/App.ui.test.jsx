@@ -47,6 +47,16 @@ describe('App end-to-end (client side)', () => {
     expect(screen.getByText('0/30')).toBeTruthy()
   })
 
+  it('has an authority-phrasing library with the canonical swap', () => {
+    render(<App />)
+    finishOnboarding()
+    fireEvent.click(screen.getByRole('button', { name: 'Phrases' }))
+    expect(screen.getByText('Say it with authority')).toBeTruthy()
+    expect(screen.getByText('“Thanks for waiting.”')).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Apology → appreciation/ }))
+    expect(screen.getByText(/Stop apologising/)).toBeTruthy()
+  })
+
   it('remembers an in-progress plan after a reload (persistence)', () => {
     const first = render(<App />)
     finishOnboarding()

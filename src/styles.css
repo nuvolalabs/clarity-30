@@ -332,3 +332,39 @@ body {
 .stage.done .stage-days { color: var(--accent-2); }
 .stage-days { font-size: 13px; min-width: 86px; }
 .stage-name { text-align: right; font-size: 13px; }
+
+/* authority swaps */
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 10px; }
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  padding: 7px 12px;
+  border-radius: 99px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip.active { border-color: var(--accent); background: rgba(91, 140, 255, 0.16); color: var(--text); }
+.swap-list { margin-top: 14px; }
+.swap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.swap-line { display: flex; gap: 8px; align-items: baseline; margin-bottom: 4px; }
+.swap-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  min-width: 62px;
+  flex-shrink: 0;
+}
+.swap-tag.weak { color: #ff9c9c; }
+.swap-tag.strong { color: var(--accent-2); }
+.swap-weak { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.25); }
+.swap-strong { color: var(--text); font-weight: 600; }
+.swap-why { margin: 8px 0 0; }
+.phrases h2 { margin-bottom: 4px; }
